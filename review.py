@@ -1,7 +1,8 @@
 
-
+from customer import Review
 class Review:
-    reviews =[]
+    reviews = []
+
     def __init__(self, customer, restaurant, rating):
         self._customer = customer
         self._restaurant = restaurant
@@ -12,19 +13,15 @@ class Review:
 
     def ratings(self):
         return self._view_rating
-    
-    
+
     def customer(self):
-        from customer import Customer
         return self._customer
-    
-  
+
     def restaurant(self):
-        from restaurant import Restaurant
         return self._restaurant
 
-    
     @classmethod
     def all(cls):
         return cls.reviews
+
     

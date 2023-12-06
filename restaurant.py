@@ -1,4 +1,4 @@
-
+from review import Review
 
 class Restaurant():
     all_restaurants =[]
@@ -24,11 +24,10 @@ class Restaurant():
         return cls.all_restaurants
     
     def average_star_rating(self):
-        total = sum(review.ratings() for review in self._review())
-        length = len(self._review())
-        mean = total / length
-        if length > 0:
-            return mean
+        total_rating = sum(review.ratings() for review in self._reviews)
+        num_reviews = len(self._reviews)
+        if num_reviews > 0:
+            return total_rating / num_reviews
         else:
             return 0
         
